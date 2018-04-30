@@ -52,70 +52,31 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="MovieReview.php">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Add Movie Review</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="#">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Actor Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="ShowMovie.html">
+          <a class="nav-link" href="ShowMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Movie Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="SearchMovie.html">
+          <a class="nav-link" href="SearchMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Search Actor/Movie</span>
           </a>
         </li>
 
-        
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-file"></i>
-            <span class="nav-link-text">Example Pages</span>
-          </a>
-          
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-sitemap"></i>
-            <span class="nav-link-text">Menu Levels</span>
-          </a>
-          <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a href="#">Second Level Item</a>
-            </li>
-            <li>
-              <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-              <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-                <li>
-                  <a href="#">Third Level Item</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-          <a class="nav-link" href="l.html">
-            <i class="fa fa-fw fa-link"></i>
-            <span class="nav-link-text">Link</span>
-          </a>
-        </li>
-      </ul>
+        </ul>
       
       
     </div>
@@ -203,7 +164,7 @@
                       $queryStr = "SELECT id, title, year, rating, company FROM Movie WHERE id IN (SELECT mid FROM MovieActor WHERE aid=" . $_GET['name'] . ");";
 
                       if ($result === FALSE) {
-                          echo "<option> Hello </option>";
+                          echo "Error. Couldn't find";
                       }
                       $result = $mysqli->query($queryStr);
                       while ($assoc = $result->fetch_assoc()) {

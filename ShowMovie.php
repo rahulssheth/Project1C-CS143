@@ -49,9 +49,15 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="MovieDirectorRelation.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Add Director to Movie Relation</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="MovieReview">
+            <i class="fa fa-fw fa-dashboard"></i>
+            <span class="nav-link-text">Add Movie Review</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
@@ -61,13 +67,13 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="ShowMovie.html">
+          <a class="nav-link" href="ShowMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Movie Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="SearchMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Search Actor/Movie</span>
           </a>
@@ -257,6 +263,7 @@
             ?> 
               <a href="MovieReview.php">
             <input type="button" class="button" id="submit" value="Add Review!">
+            <br />
             </a>
         </div>
       </div>

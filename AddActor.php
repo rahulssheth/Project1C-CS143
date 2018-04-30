@@ -54,6 +54,12 @@
             <span class="nav-link-text">Add Director to Movie Relation</span>
           </a>
         </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="MovieReview.php">
+            <i class="fa fa-fw fa-area-chart"></i>
+            <span class="nav-link-text">Add Movie Review</span>
+          </a>
+        </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="ShowActor.php">
             <i class="fa fa-fw fa-table"></i>
@@ -61,13 +67,13 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="ShowMovie.html">
+          <a class="nav-link" href="ShowMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Movie Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="SearchMovie.html">
+          <a class="nav-link" href="SearchMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Search Actor/Movie</span>
           </a>
@@ -108,10 +114,10 @@
               <input type="checkbox" name="DODCheckbox"> Check here if actor/actress alive </input>
               <br />
               <br />
-<!--               <a class="nav-link" href="AddedActor.html">
- -->              <input type="submit" class="button" value="Submit">
-<!--               </a>
- -->              </FORM>
+              <a class="nav-link" href="AddedActor.html">
+              <input type="submit" class="button" value="Submit">
+              </a>
+              </FORM>
         </div>
       </div>
     </div>

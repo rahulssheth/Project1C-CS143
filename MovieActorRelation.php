@@ -55,19 +55,25 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+          <a class="nav-link" href="MovieReview.php">
+            <i class="fa fa-fw fa-table"></i>
+            <span class="nav-link-text">Add Movie Review</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="ShowActor.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Actor Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="ShowMovie.html">
+          <a class="nav-link" href="ShowMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Movie Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="SearchMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Search Actor/Movie</span>
           </a>

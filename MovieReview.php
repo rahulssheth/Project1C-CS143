@@ -103,13 +103,13 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="ShowMovie.html">
+          <a class="nav-link" href="ShowMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Show Movie Information</span>
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-          <a class="nav-link" href="tables.html">
+          <a class="nav-link" href="SearchMovie.php">
             <i class="fa fa-fw fa-table"></i>
             <span class="nav-link-text">Search Actor/Movie</span>
           </a>
@@ -206,7 +206,6 @@
                      $rating = $_POST['rating'];
                      $comment = $_POST['comment'];
                      $queryStr = "INSERT INTO Review (name, time, mid, rating, comment) VALUES ('" . $reviewTitle . "', CURRENT_TIMESTAMP(), " . $mid . ", " . $rating . ", '" . $comment ."');";
-                     echo $queryStr;
                      $result = $mysqli->query($queryStr);
                      if ($result === FALSE) {
                         echo "ruh roh";
