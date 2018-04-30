@@ -164,6 +164,7 @@
                      }
 
                      $MovieAssoc = $movResult->fetch_assoc();
+                     echo "<tr>";
                      echo "<td>" . $MovieAssoc['title'] . "</td>";
                      echo "<td>" . $MovieAssoc['year'] . "</td>";  
                      echo "<td>" . $MovieAssoc['rating'] . "</td>";
@@ -182,67 +183,69 @@
                      $actorStr = "SELECT id, last, first FROM Actor WHERE id in (SELECT aid FROM MovieActor WHERE mid=" . $_GET['name'] . ");";
                      $actorRes = $mysqli->query($actorStr);
 
-              //        echo "</td>";
-              //        echo "</tbody>";
-              //        echo "</table>";
-              //        echo "</div>";
-              //        echo "</div>";
-              //        echo "<div class=\"card-body\">"; 
-          			 // echo "<div class=\"table-responsive\">";
-            		//  echo "<table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">";
-              // 		 echo "<thead>";
-              //   	 echo "<tr>";
-              //     	 echo "<th>Actor Name</th>";
-              //     	 echo "<th>Link</th>";
-              //   	 echo "</tr>";
-              // 		 echo "</thead>";
-              
-              // 		 echo "<tbody>";
-              // 		 	while ($actorAssoc = $actorRes->fetch_assoc()) {
-              // 		 		echo "<tr>";
-              // 		 		echo "<td>" . $actorAssoc['first'] . " " . $actorAssoc['last'] . "</td>";
-              // 		 		echo "<td><a href=\"ShowActor.php?name=" . $actorAssoc['id'] . "\">Click Me </a></td>";
-              // 		 		echo "</tr>";
-              // 		 	}
+                     echo "</td>";
+                     echo "</tr>";
+                     echo "</tbody>";
+                     echo "</table>";
+                     echo "</div>";
+                     echo "</div>";
 
-              		 // echo "</tbody>";
-              		 // echo "</table>";
-              		 // echo "</div>";
-              		 // echo "</div>";
 
-              		 $reviewStr = "SELECT avg(rating) as Average FROM Review WHERE mid=" . $_GET['name'] . "GROUP BY mid;";
-              		 $reviewRes = $mysqli->query($reviewStr);
-              		 echo $reviewRes; 
-              		 $reviewAssoc = $reviewRes->fetch_assoc();
+                     echo "<div class=\"card-body\">"; 
+          			 echo "<div class=\"table-responsive\">";
+            		 echo "<table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">";
+              		 echo "<thead>";
+                	 echo "<tr>";
+                  	 echo "<th>Actor Name</th>";
+                  	 echo "<th>Link</th>";
+                	 echo "</tr>";
+              		 echo "</thead>";
+              		echo "<tfoot>";
+              		echo "</tfoot>";
+              		 echo "<tbody>";
+              		 	while ($actorAssoc = $actorRes->fetch_assoc()) {
+              		 		echo "<tr>";
+              		 		echo "<td>" . $actorAssoc['first'] . " " . $actorAssoc['last'] . "</td>";
+              		 		echo "<td><a href=\"ShowActor.php?name=" . $actorAssoc['id'] . "\">Click Me </a></td>";
+              		 		echo "</tr>";
+              		 	}
 
+              		 echo "</tbody>";
+              		 echo "</table>";
+              		 echo "</div>";
+              		 echo "</div>";
               		 echo "<h3>Average Rating</h3>";
-              		 // echo $reviewAssoc['Average'];
 
-              // 		 $allReviewStr = "SELECT * FROM Review WHERE mid=" . $_GET['name'] .";";
-              // 		 $allReviews = $mysqli->query($allReviewStr);
-              // 		 echo "<div class=\"card-body\">"; 
-          			 // echo "<div class=\"table-responsive\">";
-            		//  echo "<table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">";
-              // 		 echo "<thead>";
-              //   	 echo "<tr>";
-              //     	 echo "<th>Review Title</th>";
-              //     	 echo "<th>Rating</th>";
-              //     	 echo "<th>Comment</th>";
-              //   	 echo "</tr>";
-              // 		 echo "</thead>";
+              		 $reviewStr = "SELECT avg(rating) as Average FROM Review WHERE mid=" . $_GET['name'] . " GROUP BY mid;";
+              		 $reviewRes = $mysqli->query($reviewStr);
+              		 $reviewAssoc = $reviewRes->fetch_assoc();
+              		 echo $reviewAssoc['Average'];
+
+              		 $allReviewStr = "SELECT * FROM Review WHERE mid=" . $_GET['name'] .";";
+              		 $allReviews = $mysqli->query($allReviewStr);
+              		 echo "<div class=\"card-body\">"; 
+          			 echo "<div class=\"table-responsive\">";
+            		 echo "<table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">";
+              		 echo "<thead>";
+                	 echo "<tr>";
+                  	 echo "<th>Review Title</th>";
+                  	 echo "<th>Rating</th>";
+                  	 echo "<th>Comment</th>";
+                	 echo "</tr>";
+              		 echo "</thead>";
               
-              // 		 echo "<tbody>";
-              // 		 while ($allAssoc = $allReviews->fetch_assoc()) {
-              // 		 	echo "<tr>";
-              // 		 	echo "<td>"  . $allAssoc['name'] . "</td>";
-              // 		 	echo "<td>" . $allAssoc['rating'] . "</td>";
-              // 		 	echo "<td>" . $allAssoc['comment'] . "</td>";
-              // 		 	echo "</tr>";
-              // 		 }
-              // 		 echo "</tbody>";
-              // 		 echo "</table>";
-              // 		 echo "</div>";
-              // 		 echo "</div>";
+              		 echo "<tbody>";
+              		 while ($allAssoc = $allReviews->fetch_assoc()) {
+              		 	echo "<tr>";
+              		 	echo "<td>"  . $allAssoc['name'] . "</td>";
+              		 	echo "<td>" . $allAssoc['rating'] . "</td>";
+              		 	echo "<td>" . $allAssoc['comment'] . "</td>";
+              		 	echo "</tr>";
+              		 }
+              		 echo "</tbody>";
+              		 echo "</table>";
+              		 echo "</div>";
+              		 echo "</div>";
 
 
 
@@ -251,7 +254,10 @@
 
 
                }
-            ?>  
+            ?> 
+              <a href="MovieReview.php">
+            <input type="button" class="button" id="submit" value="Add Review!">
+            </a>
         </div>
       </div>
     </div>
