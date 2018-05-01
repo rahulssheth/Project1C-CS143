@@ -101,8 +101,12 @@
                      if ($mysqli->connect_error) {
                       die('Unable to connect to database');
                      }
-   
-                     $queryStr = "SELECT last, first, id FROM Actor";
+                    if (!empty($_GET['name'])){ 
+                     $queryStr = "SELECT last, first, id FROM Actor WHERE id = " . $_GET['name'] . ";";
+                   }
+                    else{
+                     $queryStr = "SELECT last, first, id FROM Actor;";
+                   }
                      $result = $mysqli->query($queryStr);
 
                      if ($result === FALSE) {

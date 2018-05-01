@@ -170,7 +170,7 @@
                      $dirResult = $mysqli->query($Director);
                      $genResult = $mysqli->query($Genre);
                      if ($movResult === FALSE) {
-                        echo "Error!";
+                        // echo "Error!";
                      }
 
                      $MovieAssoc = $movResult->fetch_assoc();

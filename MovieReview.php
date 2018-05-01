@@ -139,7 +139,7 @@
             $result = $mysqli->query($queryStr);
             $assoc = $result->fetch_assoc();
 
-            echo "<h3>Reviewing: " . $assoc['title'] . "</h3>";
+            echo "<br /><h3>Reviewing: " . $assoc['title'] . "</h3><br />";
 
             $result->free();
          }
@@ -149,7 +149,7 @@
          ?>
           <FORM METHOD = "POST" ACTION="<?php echo $_SERVER["PHP_SELF"];?>" >
                   
-              <h3>Review Name </h3>
+              <h3>Review Title </h3>
               <input type="textInput" name="reviewTitle">
               <h3>Movie Name </h3>
               <select name="movie">
