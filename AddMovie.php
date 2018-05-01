@@ -159,7 +159,7 @@
                      $updateStr = "UPDATE MaxMovieID SET id = id + 1;";
                      $updateRes = $mysqli->query($updateStr);
                      $queryStr = "INSERT INTO Movie (id, title, year, rating, company) VALUES (" . $id . ", '" . $movieName . "', " . $year . ", '" . $rating . "', '" . $company . "');";          
-                     echo $queryStr;
+                     // echo $queryStr;
                      $result2 = $mysqli->query($queryStr);
                      foreach ($genre as $selectedOption) {
                         $insertion = "INSERT INTO MovieGenre (mid, genre) VALUES (" . $id . ", '" . $selectedOption . "');";
@@ -168,7 +168,10 @@
                      if ($result === FALSE) {
                         echo "ruh roh";
                       }
+                    else {
+                      echo "Inserted into Database!";
                      } 
+                    }
 
                      
                      
