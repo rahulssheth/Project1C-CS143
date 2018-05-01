@@ -143,7 +143,7 @@
                   <th>Link</th>
                 </tr>
               </thead>
-              <tfoot>
+<!--               <tfoot>
                 <tr>
                   <th>Movie Name</th>
                   <th>Release Year</th>
@@ -151,7 +151,7 @@
                   <th>Rating</th>
                   <th>Link</th>
                 </tr>
-              </tfoot>
+              </tfoot> -->
               <tbody>
               <?php 
                 if ($_SERVER["REQUEST_METHOD"] == "GET") {
@@ -209,7 +209,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2018</small>
+          <small>Copyright © CS 143 2018</small>
         </div>
       </div>
     </footer>
