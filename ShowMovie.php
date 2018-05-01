@@ -198,17 +198,17 @@
 
 
                      echo "<div class=\"card-body\">"; 
-          			 echo "<div class=\"table-responsive\">";
-            		 echo "<table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">";
-              		 echo "<thead>";
-                	 echo "<tr>";
+          			     echo "<div class=\"table-responsive\">";
+            		     echo "<table class=\"table table-bordered\" id=\"dataTable\" width=\"100%\" cellspacing=\"0\">";
+              		   echo "<thead>";
+                	   echo "<tr>";
                   	 echo "<th>Actor Name</th>";
                   	 echo "<th>Link</th>";
-                	 echo "</tr>";
-              		 echo "</thead>";
-              		echo "<tfoot>";
-              		echo "</tfoot>";
-              		 echo "<tbody>";
+                	   echo "</tr>";
+              		   echo "</thead>";
+              		   echo "<tfoot>";
+              		   echo "</tfoot>";
+              		   echo "<tbody>";
               		 	while ($actorAssoc = $actorRes->fetch_assoc()) {
               		 		echo "<tr>";
               		 		echo "<td>" . $actorAssoc['first'] . " " . $actorAssoc['last'] . "</td>";
