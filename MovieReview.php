@@ -172,7 +172,7 @@
 
                      $result = $mysqli->query($queryStr);
 
-                     if ($result === FALSE) {
+                     if ($result == FALSE) {
                         printf("Error: %s\n", $mysqli->error);
                      }
         

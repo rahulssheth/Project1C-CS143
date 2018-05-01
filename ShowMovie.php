@@ -107,8 +107,12 @@
                      if ($mysqli->connect_error) {
                       die('Unable to connect to database');
                      }
-   
-                     $queryStr = "SELECT id, title, year, rating, company FROM Movie";
+                    if (!empty($_GET['name'])){   
+                      $queryStr = "SELECT id, title, year, rating, company FROM Movie WHERE id = " . $_GET['name'] . ";";
+                    }
+                    else {
+                      $queryStr = "SELECT id, title, year, rating, company FROM Movie;";
+                    }
                      $result = $mysqli->query($queryStr);
 
                      if ($result === FALSE) {
