@@ -169,7 +169,7 @@
                         echo "ruh roh";
                       }
                     else {
-                      echo "Inserted into Database!";
+                      echo "Inserted " . $movieName . " into Database!";
                      } 
                     }
 
