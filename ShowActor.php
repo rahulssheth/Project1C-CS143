@@ -177,13 +177,30 @@
 
                         echo "</tr>";
                       }
+                      echo "</tbody>";
+                      echo "</table>";
+                      echo "</div>";
+                      echo "</div>";
                      
+                      $queryStr2 = "SELECT * FROM Actor WHERE id=" . $_GET['name'] . ");";
+                      $result2 = $mysqli->query($queryStr2);
+                      $assoc = $result2->fetch_assoc();
+                      echo "<h4><b>Name:</b> " . $assoc['first'] . " " . $assoc['last'];
+                      echo "<br />";
+                      echo "<h4><b>Gender:</b> " . $assoc['sex'];
+                      echo "<br />";
+                      echo "<h4><b>DOB</b> " . $assoc['dob'];
+                      echo "<br />";
+                      if ($assoc['dod'] == NULL) {
+                        echo "<h4>Still Alive</h4>";
+
+
+                      } else {
+                        echo "<h4>DOD</h4> " . $assoc['dod']; 
+                      }
                 }
               ?>  
-              </tbody>
-            </table>
-          </div>
-        </div>
+             
           
         </div>
       </div>
