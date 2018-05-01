@@ -181,22 +181,21 @@
                       echo "</table>";
                       echo "</div>";
                       echo "</div>";
-                     
-                      $queryStr2 = "SELECT * FROM Actor WHERE id=" . $_GET['name'] . ");";
+                      $queryStr2 = "SELECT * FROM Actor WHERE id=" . $_GET['name'] . ";";
                       $result2 = $mysqli->query($queryStr2);
-                      $assoc = $result2->fetch_assoc();
-                      echo "<h4><b>Name:</b> " . $assoc['first'] . " " . $assoc['last'];
+                      $assoc2 = $result2->fetch_assoc();
+                      echo "<h4><b>Name: </b> " . $assoc2['first'] . " " . $assoc2['last'];
                       echo "<br />";
-                      echo "<h4><b>Gender:</b> " . $assoc['sex'];
+                      echo "<h4><b>Gender: </b> " . $assoc2['sex'];
                       echo "<br />";
-                      echo "<h4><b>DOB</b> " . $assoc['dob'];
+                      echo "<h4><b>DOB: </b> " . $assoc2['dob'];
                       echo "<br />";
-                      if ($assoc['dod'] == NULL) {
-                        echo "<h4>Still Alive</h4>";
+                      if ($assoc2['dod'] == NULL) {
+                        echo "<h4><b>DOD:</b> Still Alive</h4>";
 
 
                       } else {
-                        echo "<h4>DOD</h4> " . $assoc['dod']; 
+                        echo "<h4>DOD: </h4> " . $assoc2['dod']; 
                       }
                 }
               ?>  
