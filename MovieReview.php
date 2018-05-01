@@ -128,6 +128,25 @@
       <div class="row">
         <div class="col-12">
          <h1>Add Review </h1>
+         <?php
+         $mysqli = new mysqli('localhost', 'cs143', '', 'CS143');
+         if ($mysqli->connect_error) {
+          die('Unable to connect to database');
+         }
+
+          if (!empty($_GET['name'])){
+            $queryStr = "SELECT title FROM Movie WHERE id = " . $_GET['name'];
+            $result = $mysqli->query($queryStr);
+            $assoc = $result->fetch_assoc();
+
+            echo "<h3>Reviewing: " . $assoc['title'] . "</h3>";
+
+            $result->free();
+         }
+
+        $mysqli->close(); 
+
+         ?>
           <FORM METHOD = "POST" ACTION="<?php echo $_SERVER["PHP_SELF"];?>" >
                   
               <h3>Review Name </h3>
@@ -137,16 +156,20 @@
                <?php
 
 
-   
-
-
                       $mysqli = new mysqli('localhost', 'cs143', '', 'CS143');
 
                      if ($mysqli->connect_error) {
                       die('Unable to connect to database');
                      }
-   
-                     $queryStr = "SELECT title, id FROM Movie";
+
+                    if (!empty($_GET['name'])){   
+                      $queryStr = "SELECT title, id FROM Movie WHERE id = " . $_GET['name'] . ";";
+                    }
+                    else{
+                      $queryStr = "SELECT title, id FROM Movie;";
+
+                    }
+
                      $result = $mysqli->query($queryStr);
 
                      if ($result === FALSE) {
@@ -156,7 +179,6 @@
                      while ($assoc = $result->fetch_assoc()) {
                         $keys = array_keys($assoc);
                         echo "<option value=\"" .$assoc['id'] . "\">" . $assoc['title'] . "</option>";
-    
                      }
    
     

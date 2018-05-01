@@ -261,8 +261,11 @@
 
                }
             ?> 
-              <a href="MovieReview.php">
-            <input type="button" class="button" id="submit" value="Add Review!">
+            <?php
+              echo "<a href=\"MovieReview.php?name=" .  $_GET['name'] . "\"><input type=\"button\" class=\"button\" id=\"submit\" value=\"Add Review!\">";
+            ?>
+             <!--  <a href="MovieReview.php">
+            <input type="button" class="button" id="submit" value="Add Review!"> -->
             <br />
             </a>
         </div>
